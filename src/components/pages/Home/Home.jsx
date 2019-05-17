@@ -1,6 +1,5 @@
 import React from 'react';
-import SampleComponent from '../../SampleComponent';
-import Parent from '../Parent';
+import Parent from '../../Parent';
 
 import styles from './Home.scss';
 

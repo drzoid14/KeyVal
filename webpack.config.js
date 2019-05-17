@@ -62,7 +62,7 @@ module.exports = {
           },
           'postcss-loader',
           'resolve-url-loader',
-          'sass-loader?sourceMap',
+          'sass-loader',
         ],
       },
       {

@@ -1,0 +1,84 @@
+@import 'src/assets/styles/base/baseExport';
+
+
+.parent{
+    background: rgb(81,82,86);
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    border-radius:3px;
+    
+
+    h1{
+        background: rgb(64,170,232);
+        padding-left: 15px;
+        border-radius: 3px 3px 0px 0px;
+    }
+
+
+    .header{
+        display: flex;
+        padding-left: 15px;
+        padding-top: 15px;
+
+        button{
+            margin-left:15px;
+            border:none
+        }
+    }
+
+    span{
+        button{
+            background:red;
+            color:white;
+            border: none;
+            text-align:center
+        }
+    }
+
+    form{
+        display: block;
+        
+        margin: 10px;
+
+
+        input {
+            padding-left:10px;
+            width: 40%;
+            margin:10px;
+            margin-top:2px;
+            margin-bottom:2px;
+            border-radius: 3px;
+            border:none
+        }
+
+        .submit{
+            width: 100%;
+            border-radius: 3px;
+            background: rgb(64,170,232);
+            border: none;
+            color: $white;
+            margin-top:10px;
+        }
+    }
+    
+
+    
+}
+
+button{
+    border-radius: 10%
+}
+ 
+
+@media only screen and (max-width:400px){
+
+    .parent{
+        form{
+            input{
+                height:30px;
+                
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+// import styles from '../SampleComponent/SampleComponent.scss'
 import styles from './Parent.scss'
-
 
 
 class Parent extends React.Component {
@@ -55,11 +55,16 @@ class Parent extends React.Component {
     handleDelete(e) {
         let id = e.target.className
         let current = this.state.child[id]
-        console.log("Deleting row className " + { id })
-        let result = this.state.child.filter(function (ele) {
-            return ele.key != current.key
-        })
+        console.log("Deleting row className " + id)
+        // let result = this.state.child.filter(function (ele) {
+            
+        //     return ele.key != current.key
+        // })
 
+        let result = this.state.child.splice(id, 1)
+        console.log(result)
+        console.log(this.state.child + " is child")
+        result = this.state.child
         this.setState({
             child: result
         })
@@ -103,24 +108,24 @@ class Parent extends React.Component {
                     className={index}
                     value={this.state.child[index].value}
                 />
-                <button type="button" className={index} onClick={this.handleDelete}>x</button>
+                <button type="button" id="delete" className={index} onClick={this.handleDelete}>x</button>
             </span>
         )
 
         return (
-            <div className={styles.parent}>
-                <div className={styles.top}>
+            <div data-test-hook='parentPage' className={styles.parent}>
+                <div>
                     <h1>Hey Look A Title</h1>
                 </div>
                 <div className={styles.header}>
-                    <p>This is My Brillianty Creative Header</p>
-                    <button type="button" onClick={this.addChild}>+</button>
+                    <h4>This is My Brillianty Creative Header</h4>
+                    <button id="add" type="button" onClick={this.addChild}>+</button>
                 </div>
-                <form className={styles.form}
+                <form 
                     onSubmit={this.handleSubmit} >
                     {Children}
-
-                    <button type='submit'>Submit</button>
+                    
+                    <button type='submit' id="submit" className={styles.submit}>Submit</button>
                 </form>
             </div>
         )
